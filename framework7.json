@@ -1,0 +1,19 @@
+{
+  "cwd": "/Users/beaubarrier/Documents/GitHub/samSmithMassageStudio",
+  "type": [
+    "pwa"
+  ],
+  "name": "samSmithMassage",
+  "framework": "react",
+  "template": "tabs",
+  "bundler": "vite",
+  "cssPreProcessor": false,
+  "theming": {
+    "customColor": true,
+    "color": "#0090ad",
+    "darkTheme": false,
+    "iconFonts": true,
+    "fillBars": true
+  },
+  "customBuild": false
+}
