@@ -82,7 +82,6 @@ const MyApp = () => {
         text={pageChange()}
         id="fabBtn"
         style={{ width: "57%" }}
-        href="#view-home"
         onClick={() => {
           if (currentPage === "main") {
             setPage("schedule");

@@ -11,11 +11,27 @@ import {
   Button,
   Range,
   Block,
+  Fab,
 } from "framework7-react";
 
 const Form = () => (
   <Page name="form">
-    <BlockTitle>Form Example</BlockTitle>
+    <Fab
+      // small
+      position="right-top"
+      text="Close"
+      id="fabBtn"
+      // style={{ width: "57%" }}
+      onClick={() => {
+        if (currentPage === "main") {
+          setPage("schedule");
+        } else if (currentPage === "schedule") {
+          setPage("main");
+        }
+        fabBtn.setAttribute("style", "visibility: none");
+      }}
+    ></Fab>
+    <BlockTitle>Personal Information</BlockTitle>
     <List noHairlinesMd>
       <ListInput
         label="First Name"
@@ -31,27 +47,16 @@ const Form = () => (
       <ListInput label="E-mail" type="email" placeholder="E-mail"></ListInput>
 
       <ListInput label="Phone" type="tel" placeholder="Phone"></ListInput>
-
+    </List>
+    <BlockTitle>Desired Appointment Date</BlockTitle>
+    <List>
       <ListInput
-        label="Appointment Date"
+        label="Select Date"
         type="date"
         placeholder="What day would you like to schedule for."
         defaultValue="2014-04-30"
       ></ListInput>
-
-      <ListItem title="Toggle">
-        <Toggle slot="after" />
-      </ListItem>
-
-      <ListInput type="textarea" label="Textarea" placeholder="Bio"></ListInput>
-      <ListInput
-        type="textarea"
-        label="Resizable"
-        placeholder="Bio"
-        resizable
-      ></ListInput>
     </List>
-
     <BlockTitle>Session Type</BlockTitle>
     <List>
       <ListItem
@@ -88,6 +93,23 @@ const Form = () => (
         title="Two Hour"
       ></ListItem>
     </List>
+    <BlockTitle>Additional Information</BlockTitle>
+    <List>
+      <ListInput
+        type="textarea"
+        label=""
+        placeholder="Is there anything you'd like to let me know?"
+      ></ListInput>
+    </List>
+    <Block>
+      <Button
+        large
+        fill
+        round
+        text="Schedule Appointment"
+        style={{ width: "97%", float: "center" }}
+      ></Button>
+    </Block>
   </Page>
 );
 
