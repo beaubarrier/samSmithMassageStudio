@@ -14,26 +14,26 @@ var routes = [
     path: "/",
     component: HomePage,
   },
-  {
-    path: "/about/",
-    component: AboutPage,
-  },
+  // {
+  //   path: "/about/",
+  //   component: AboutPage,
+  // },
   {
     path: "/form/",
     component: FormPage,
   },
-  {
-    path: "/catalog/",
-    component: CatalogPage,
-  },
-  {
-    path: "/product/:id/",
-    component: ProductPage,
-  },
-  {
-    path: "/settings/",
-    component: SettingsPage,
-  },
+  // {
+  //   path: "/catalog/",
+  //   component: CatalogPage,
+  // },
+  // {
+  //   path: "/product/:id/",
+  //   component: ProductPage,
+  // },
+  // {
+  //   path: "/settings/",
+  //   component: SettingsPage,
+  // },
 
   {
     path: "/dynamic-route/blog/:blogId/post/:postId/",
