@@ -16,21 +16,6 @@ import {
 
 const Form = () => (
   <Page name="form">
-    <Fab
-      // small
-      position="right-top"
-      text="Close"
-      id="fabBtn"
-      // style={{ width: "57%" }}
-      onClick={() => {
-        if (currentPage === "main") {
-          setPage("schedule");
-        } else if (currentPage === "schedule") {
-          setPage("main");
-        }
-        fabBtn.setAttribute("style", "visibility: none");
-      }}
-    ></Fab>
     <BlockTitle>Personal Information</BlockTitle>
     <List noHairlinesMd>
       <ListInput
@@ -101,13 +86,24 @@ const Form = () => (
         placeholder="Is there anything you'd like to let me know?"
       ></ListInput>
     </List>
+    <Block className="center">
+      <BlockTitle className="center">
+        Payment is due <b>before</b> services are rendered. <br></br>
+        <br></br>I accept
+        <br></br>
+        Cash, credit card*, Zelle*, and Venmo*<br></br>
+        <br></br>
+      </BlockTitle>
+      * There is a $10 surcharge for using Credit/Debit Card, Zelle, or Venmo.
+    </Block>
     <Block>
       <Button
         large
         fill
         round
+        color="purple"
         text="Schedule Appointment"
-        style={{ width: "97%", float: "center" }}
+        style={{ width: "95%", marginLeft: "2.5%" }}
       ></Button>
     </Block>
   </Page>

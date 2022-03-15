@@ -81,6 +81,12 @@
   /* transform: translate(-50%, -50%); */
   text-align: center;
 }
-#fabBtn {
+#fabBtn1 {
   visibility: visible;
+}
+#fabBtn2 {
+  visibility: hidden;
+}
+.invisible {
+  visibility: hidden;
 }

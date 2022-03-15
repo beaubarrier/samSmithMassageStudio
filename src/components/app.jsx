@@ -34,8 +34,6 @@ const MyApp = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [currentPage, setPage] = useState("main");
-  const [pageName, setPageName] = useState("Schedule Appointment");
-
   function pageChange() {
     if (currentPage === "main") {
       return "Schedule Appointment";
@@ -74,13 +72,13 @@ const MyApp = () => {
       return <Schedule />;
     }
   };
+
   return (
     <App {...f7params}>
       <Fab
-        // small
         position="right-bottom"
         text={pageChange()}
-        id="fabBtn"
+        id="fabBtn1"
         style={{ width: "57%" }}
         onClick={() => {
           if (currentPage === "main") {
@@ -88,28 +86,24 @@ const MyApp = () => {
           } else if (currentPage === "schedule") {
             setPage("main");
           }
-          fabBtn.setAttribute("style", "visibility: none");
+          fabBtn1.setAttribute("style", "visibility: none");
+          fabBtn2.setAttribute("style", "visibility: visible");
         }}
       ></Fab>
-
-      {/* <Fab
-        // small
-        position="right-bottom"
-        text={pageChange()}
-        id="fabBtn"
-        style={{ width: "57%" }}
-        href="#view-home"
+      <Fab
+        position="right-top"
+        text="Close"
+        id="fabBtn2"
+        // style={{ width: "57%" }}
         onClick={() => {
-          if (currentPage === "main") {
-            setPage("schedule");
-          } else if (currentPage === "schedule") {
+          if (currentPage === "schedule") {
             setPage("main");
           }
+          fabBtn1.setAttribute("style", "visibility: visible");
+          fabBtn2.setAttribute("style", "visibility: none");
         }}
-      ></Fab> */}
-      {/* Tabbar for switching views-tabs */}
+      ></Fab>
       {pageRender()}
-      {/* Your main view/tab, should have "view-main" class. It also has "tabActive" prop */}
     </App>
   );
 };

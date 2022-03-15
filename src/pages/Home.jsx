@@ -126,7 +126,8 @@ const iosPage = () => {
             Cash, credit card*, Zelle*, and Venmo*<br></br>
             <br></br>
           </BlockTitle>
-          * There is a $10 surcharge for using credit card, Zelle, or Venmo.
+          * There is a $10 surcharge for using Credit/Debit Card, Zelle, or
+          Venmo.
         </Block>
         <Block>
           <br></br>
