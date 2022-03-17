@@ -3,7 +3,7 @@
   "short_name": "samSmithMassage",
   "description": "samSmithMassage",
   "lang": "en-US",
-  "start_url": "https://beaubarrier.github.io/samSmithMassageStudio/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#0090ad",
   "theme_color": "#0090ad",
