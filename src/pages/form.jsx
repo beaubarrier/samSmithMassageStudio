@@ -13,26 +13,56 @@ import {
   Block,
   Fab,
 } from "framework7-react";
+const infoRet = (props, { $, $on, $f7 }) => {
+  $on("pageInit", () => {
+    $(".convert-form-to-data").on("click", function () {
+      var formData = $f7.form.convertToData("#my-form");
+      alert(JSON.stringify(formData));
+    });
+  });
 
+  return $render;
+};
+const renderForm = () => {
+  console.log(document.getElementByClass("item-input-wrap").input);
+};
 const Form = () => (
   <Page name="form">
     <BlockTitle>Personal Information</BlockTitle>
-    <List noHairlinesMd>
-      <ListInput
-        label="First Name"
-        type="text"
-        placeholder="Your first name"
-      ></ListInput>
-      <ListInput
-        label="Last Name"
-        type="text"
-        placeholder="Your last name"
-      ></ListInput>
+    <div className="item-content item-input">
+      <List noHairlinesMd>
+        <ListInput
+          id="nameInput"
+          className="item-input-wrap"
+          label="First Name"
+          type="text"
+          placeholder="Your first name"
+        ></ListInput>
+        <ListInput
+          label="Last Name"
+          type="text"
+          placeholder="Your last name"
+        ></ListInput>
 
-      <ListInput label="E-mail" type="email" placeholder="E-mail"></ListInput>
+        <ListInput
+          label="E-mail"
+          type="email"
+          placeholder=" Your e-mail address"
+        ></ListInput>
 
-      <ListInput label="Phone" type="tel" placeholder="Phone"></ListInput>
-    </List>
+        <ListInput
+          label="Phone"
+          type="tel"
+          placeholder="Your phone number"
+        ></ListInput>
+
+        <ListInput
+          label="Address"
+          type="text"
+          placeholder="Required for in home massage"
+        ></ListInput>
+      </List>
+    </div>
     <BlockTitle>Desired Appointment Date</BlockTitle>
     <List>
       <ListInput
@@ -83,27 +113,35 @@ const Form = () => (
       <ListInput
         type="textarea"
         label=""
-        placeholder="Is there anything you'd like to let me know?"
+        placeholder="Is there anything you'd like to let me know relating to your massage?"
       ></ListInput>
     </List>
     <Block className="center">
       <BlockTitle className="center">
+        {" "}
+        Please allow 24 hours for a response.
+        <br></br>
+        <br></br>
         Payment is due <b>before</b> services are rendered. <br></br>
         <br></br>I accept
         <br></br>
-        Cash, credit card*, Zelle*, and Venmo*<br></br>
+        Cash, Credit/Debit Card*, Zelle*, and Venmo*<br></br>
         <br></br>
       </BlockTitle>
       * There is a $10 surcharge for using Credit/Debit Card, Zelle, or Venmo.
     </Block>
     <Block>
       <Button
+        className="button button-fill convert-form-to-data"
         large
         fill
         round
         color="purple"
         text="Schedule Appointment"
         style={{ width: "95%", marginLeft: "2.5%" }}
+        onClick={() => {
+          renderForm();
+        }}
       ></Button>
     </Block>
   </Page>

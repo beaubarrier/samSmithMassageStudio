@@ -30,26 +30,26 @@ import samPic from "/assets/samPic.png";
 
 const device = getDevice();
 
-// const ColoredLine = ({ color }) => (
-//   <hr
-//     id="hrLine"
-//     style={{
-//       color: "black",
-//       backgroundColor: "rgb(57, 57, 57)",
-//       height: 1,
-//       borderRadius: 10,
-//       width: "90%",
-//       border: "none",
-//       marginTop: "100px",
-//       marginBottom: "60px",
-//       marginRight: "5.5%",
-//     }}
-//   />
-// );
 const iosPage = () => {
   const [pageName, setPageName] = useState("Schedule Appointment");
   const [currentPage, setPage] = useState("main");
 
+  const ColoredLine = ({ color }) => (
+    <hr
+      id="hrLine"
+      style={{
+        color: "black",
+        backgroundColor: "rgb(57, 57, 57)",
+        height: 1,
+        borderRadius: 10,
+        width: "90%",
+        border: "none",
+        marginTop: "20px",
+        marginBottom: "0px",
+        marginRight: "5.5%",
+      }}
+    />
+  );
   function pageChange() {
     if (currentPage === "main") {
       return "Schedule Appointment";
@@ -60,48 +60,82 @@ const iosPage = () => {
   if (device.ios) {
     return (
       <Page name="home">
-        {/* <Fab
-          // small
-
-          position="right-bottom"
-          text={pageChange()}
-          href="/form"
-          id="fabBtn"
-          style={{ width: "57%" }}
-        ></Fab> */}
-        {/* Top Navbar */}
-        {/* <PageContent> */}
         <img src={samLogo} id="samLogo" />
         <Block>
           <img src={samPic} id="samPic" />
         </Block>
-        {/* <Fab
-          // small
-          position="right-bottom"
-          text="Schedule Appointment"
-          id="fabBtn"
-          style={{ width: "57%" }}
-          link="/scheduleApt"
-        >
-        </Fab> */}
 
         <Block id="flavorText" className="center">
-          <BlockTitle className="center">About Me</BlockTitle>
+          <BlockTitle className="center">A little bit about me...</BlockTitle>
           {/* <i> */}
           After getting my certifications from Anthem Massage School, I was
           mentored by an established local spa owner for two years before
           starting my own practice. I have over 10 years experience and I
           specialize in therapeutic, myofacial, deep tissue, Sweedish, and
-          lymphatic massage. Maybe say something here about the different types
-          of ppl youve helped or something idk.
+          lymphatic massage.
           {/* </i> */}
+          {ColoredLine("black")}
         </Block>
         {/* ************************************************************************ */}
 
         {/* <BlockTitle className="center">Packages</BlockTitle> */}
         {/* <Card className="center" id="mainCard"> */}
         <Block>
-          <BlockTitle className="center">In Home Massage</BlockTitle>
+          <BlockTitle className="center">Services</BlockTitle>
+
+          <Card>
+            <div className="data-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th className="label-cell">IN HOME MASSAGE</th>
+                    <th className="numeric-cell">PRICE</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="label-cell">60 Minute</td>
+                    <td className="numeric-cell">$110</td>
+                  </tr>
+                  <tr>
+                    <td className="label-cell">90 Minute</td>
+                    <td className="numeric-cell">$140</td>
+                  </tr>
+                  <tr>
+                    <td className="label-cell">120 Minute</td>
+                    <td className="numeric-cell">$170</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </Card>
+          <Card>
+            <div className="data-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th className="label-cell">IN STUDIO MASSAGE</th>
+                    <th className="numeric-cell">PRICE</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="label-cell">60 Minute</td>
+                    <td className="numeric-cell">$90</td>
+                  </tr>
+                  <tr>
+                    <td className="label-cell">90 Minute</td>
+                    <td className="numeric-cell">$110</td>
+                  </tr>
+                  <tr>
+                    <td className="label-cell">120 Minute</td>
+                    <td className="numeric-cell">$150</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </Card>
+          {/* <BlockTitle className="center">In Home Massage</BlockTitle>
           <Card className="center" id="inHomeCard">
             <CardHeader className="center">
               In home massage is a minimum of one hour, and starts at $100.
@@ -116,14 +150,16 @@ const iosPage = () => {
               In studio massage is a minimum of one hour, and starts at $80.
             </CardHeader>
             $100 for 90 minutes.<br></br>$140 for two hours!
-          </Card>
+          </Card> */}
+          {ColoredLine("black")}
         </Block>
+
         <Block className="center">
           <BlockTitle className="center">
             Payment is due <b>before</b> services are rendered. <br></br>
             <br></br>I accept
             <br></br>
-            Cash, credit card*, Zelle*, and Venmo*<br></br>
+            Cash, Credit Card*, Zelle*, and Venmo*<br></br>
             <br></br>
           </BlockTitle>
           * There is a $10 surcharge for using Credit/Debit Card, Zelle, or
